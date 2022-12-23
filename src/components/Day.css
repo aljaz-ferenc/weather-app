@@ -1,0 +1,22 @@
+.day__container{
+    background-color: rgba(255, 255, 255, .2);
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+.day__icon{
+    margin: 0 auto;
+}
+
+.day__icon img{
+    width: 5rem;
+    
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.7));
+}

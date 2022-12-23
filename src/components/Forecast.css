@@ -1,0 +1,7 @@
+.forecast__container{
+    grid-column: 2 / span 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
