@@ -7,3 +7,20 @@
     gap: 1rem;
     background-color: var(--color-card-background);
 }
+
+.day-icon img{
+    width: 100%;
+}
+
+@media (max-width:810px){
+    .forecast__container{
+      grid-row: -1;
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width:526px){
+    .forecast__container{
+        font-size: .8rem;
+    }
+  }

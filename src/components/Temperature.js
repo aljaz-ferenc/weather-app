@@ -9,7 +9,7 @@ export default function Temperature({temperature}) {
         <div className='min'><span className='label'>Min</span><span className='data'>{temperature && temperature.temp_min.toFixed(1)}&#8451;</span></div>
         <div className='max'><span className='label'>Max</span><span className='data'>{temperature && temperature.temp_max.toFixed(1)}&#8451;</span></div>
         </div>
-        <div className='fells-like'><span>Feels like: </span><span className='bold'>{temperature && temperature.feels_like.toFixed(1)}&#8451;</span></div>
+        <div className='feels-like'><span>Feels like: </span><span className='bold'>{temperature && temperature.feels_like.toFixed(1)}&#8451;</span></div>
     </div>
   )
 }

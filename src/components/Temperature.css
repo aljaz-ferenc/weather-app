@@ -22,6 +22,7 @@
 .min-max{
     display: flex;
     gap: 2rem;
+    justify-content: center;
 }
 
 .min, .max{
@@ -36,3 +37,25 @@
 .min-max .data{
     font-size: 1.6rem;
 }
+
+@media (max-width:810px){
+    .data{
+        font-size: 1.6rem;
+    }
+    .min-max .data{
+        font-size: 1rem;
+    }
+  }
+
+  @media (max-width:526px){
+    .temperature .data{
+        font-size: 1rem;
+    }
+    .min-max .data,
+    .min-max .label{
+        font-size: .8rem;
+    }
+    .feels-like{
+        font-size: .8rem;
+    }
+  }

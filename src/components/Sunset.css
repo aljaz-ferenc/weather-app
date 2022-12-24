@@ -1,21 +1,45 @@
-.sun__container{
-    background-color: var(--color-card-background);
-    display: flex;
-    justify-content: space-around;
-    grid-row: 4;
-    grid-column: 3;
+.sun__container {
+  background-color: var(--color-card-background);
+  display: flex;
+  justify-content: space-around;
+  grid-row: 4;
+  grid-column: 3;
 }
 
 .sunset-img,
-.sunrise-img{
-    width: 8rem;
+.sunrise-img {
+  width: 100%;
 }
 
 .sun__sunrise,
-.sun__sunset{
-    display: flex;
+.sun__sunset {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 810px) {
+  .sun__container {
+    grid-row: 2 / 4;
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 2rem;
-    text-align: center;
+    
+  }
+  .sun__sunrise,
+  .sun__sunset {
+    justify-content: center;
+    gap: 0;
+  }
+  .sun__container h2{
+    font-size: 1rem;
+  }
+  .time__container{
+    font-size: .8rem;
+  }
+  .sunrise-img,
+  .sunset-img{
+    max-width: 175px;
+    margin: 0 auto;
+  }
 }
