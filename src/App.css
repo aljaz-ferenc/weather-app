@@ -1,19 +1,14 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
 
 .App {
   height: 100vh;
-  background-image: url("./images/day.jpg");
+  background-image: url("./images/day12.jpg");
   background-position: center;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--color-text);
 }
 
 .content {

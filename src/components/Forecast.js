@@ -22,7 +22,14 @@ export default function Forecast({ forecast }) {
     <div className='forecast__container'>
       {filteredDays && filteredDays.map((day, index) => {
         return (
-          <Day key={index} date={day.dt} weather={day.weather[0].description} icon={day.weather[0].icon}/>
+          <Day
+            key={index}
+            date={day.dt}
+            weather={day.weather[0].description}
+            icon={day.weather[0].icon}
+            temperature={day.main.temp}
+            feelsLike={day.main.feels_like}
+          />
         )
       })}
     </div>

@@ -1,12 +1,15 @@
 import React from 'react'
+import './Temperature.css'
 
 export default function Temperature({temperature}) {
   return (
     <div className='temperature'>
-        <div>Temperature: {temperature && temperature.temp}</div>
-        <div>Feels like: {temperature && temperature.feels_like}</div>
-        <div>Max temp: {temperature && temperature.temp_min}</div>
-        <div>Min temp: {temperature && temperature.temp_max}</div>
+        <div><span className='data'>{temperature && temperature.temp.toFixed(1)}&#8451;</span></div>
+        <div className='min-max'>
+        <div className='min'><span className='label'>Min</span><span className='data'>{temperature && temperature.temp_max.toFixed(1)}&#8451;</span></div>
+        <div className='max'><span className='label'>Max</span><span className='data'>{temperature && temperature.temp_min.toFixed(1)}&#8451;</span></div>
+        </div>
+        <div className='fells-like'><span>Feels like: </span><span>{temperature && temperature.feels_like.toFixed(1)}&#8451;</span></div>
     </div>
   )
 }

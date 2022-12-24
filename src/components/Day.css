@@ -1,7 +1,7 @@
 .day__container{
-    background-color: rgba(255, 255, 255, .2);
     height: 100%;
     width: 100%;
+    min-width: max-content;
     border-radius: 10px;
     text-align: center;
     display: flex;
@@ -9,14 +9,27 @@
     justify-content: flex-start;
     gap: 1rem;
     padding-top: 1rem;
+    position: relative;
 }
 
-.day__icon{
-    margin: 0 auto;
+.day__container:not(:last-child)::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    right: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.1); 
+    border-radius: 50%;
+    transform: translateX(600%);
 }
 
 .day__icon img{
     width: 5rem;
     
     filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.7));
+}
+
+.day__date{
+    font-weight: 500;
 }

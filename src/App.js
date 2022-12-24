@@ -11,10 +11,11 @@ function App() {
   const [coords, setCoords] = useState({ lon: 46.0500268, lat: 14.5069289 })
   const [weatherData, setWeatherData] = useState()
   const [forecast, setForecast] = useState()
+  const [language, setLanguage] = useState('en')
 
   const API_KEY = '07a43d5ef147868f0d6a3c55290c10b4'
   const URL_GEO = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${API_KEY}`
-  const URL_WEATHER = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&units=metric&appid=${API_KEY}`
+  const URL_WEATHER = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&units=metric&lang=${language}&appid=${API_KEY}`
   const URL_FORECAST = `https://api.openweathermap.org/data/2.5/forecast?lat=${coords.lat}&lon=${coords.lon}&units=metric&appid=${API_KEY}`
 
 
