@@ -33,3 +33,13 @@
 .day__date{
     font-weight: 500;
 }
+
+.day__cloudiness{
+    display: flex;
+    flex-direction: column;
+}
+
+.day__wind{
+    display: flex;
+    flex-direction: column;
+}

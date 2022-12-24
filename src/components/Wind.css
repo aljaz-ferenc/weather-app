@@ -1,4 +1,18 @@
 .wind__container{
     background-color: var(--color-card-background);
     text-align: center;
+    grid-row: 4;
+    grid-column: 2;
 }
+
+.wind__logo{
+    width: 10rem;
+}
+
+.wind__data{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin: .5rem 0;
+}
+

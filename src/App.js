@@ -3,7 +3,7 @@ import Overview from './components/Overview';
 import Sunset from './components/Sunset';
 import Forecast from './components/Forecast';
 import Wind from './components/Wind';
-import { useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 
 function App() {
   const [city, setCity] = useState('ljubljana')
@@ -12,11 +12,12 @@ function App() {
   const [weatherData, setWeatherData] = useState()
   const [forecast, setForecast] = useState()
   const [language, setLanguage] = useState('en')
+  const [currentTime, setCurrentTime] = useState()
 
   const API_KEY = '07a43d5ef147868f0d6a3c55290c10b4'
-  const URL_GEO = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${API_KEY}`
+  const URL_GEO = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${API_KEY}`
   const URL_WEATHER = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&units=metric&lang=${language}&appid=${API_KEY}`
-  const URL_FORECAST = `https://api.openweathermap.org/data/2.5/forecast?lat=${coords.lat}&lon=${coords.lon}&units=metric&appid=${API_KEY}`
+  const URL_FORECAST = `https://api.openweathermap.org/data/2.5/forecast?lat=${coords.lat}&lon=${coords.lon}&units=metric&lang=${language}&appid=${API_KEY}`
 
 
   useEffect(() => {
@@ -25,43 +26,48 @@ function App() {
       .then(data => {
         setCoords({ lon: data[0].lon, lat: data[0].lat })
       })
-    }, [city])
+  }, [city])
 
-    useEffect(()=> {
-      fetch(URL_WEATHER)
+  useEffect(() => {
+    fetch(URL_WEATHER)
       .then(response => response.json())
       .then(data => {
         setWeatherData(data)
       })
-    },[coords])
+  }, [coords])
 
-    useEffect(()=> {
-      fetch(URL_FORECAST)
+  useEffect(() => {
+    fetch(URL_FORECAST)
       .then(response => response.json())
       .then(data => {
         setForecast(data)
       })
-    },[coords])
+  }, [coords])
 
-  function handleInputCity(e){
+  function handleInputCity(e) {
     setInputCity(e.target.value)
   }
 
-  function handleSubmitCity(e){
+  function handleSubmitCity(e) {
     e.preventDefault()
     setCity(inputCity)
     e.target.value = ''
   }
 
+  setInterval(() => {
+    setCurrentTime(new Date().toLocaleString().slice(0, 16) + new Date().toLocaleString().slice(19))
+  }, 1000);
+
   return (
     <div className="App">
       <div className='content'>
-      <Overview weatherData={weatherData && weatherData} city={forecast && forecast.city.name} handleSubmitCity={handleSubmitCity} handleInputCity={handleInputCity}/> 
-      <Forecast forecast={forecast && forecast}/>
-      <Wind  weatherData={weatherData && weatherData}/>
-      <Sunset  weatherData={weatherData && weatherData}/>   
-    </div>
+        <div className='time'>{currentTime}</div>
+        <Overview weatherData={weatherData && weatherData} city={forecast && forecast.city.name} handleSubmitCity={handleSubmitCity} handleInputCity={handleInputCity} />
+        <Forecast forecast={forecast && forecast} />
+        <Wind weatherData={weatherData && weatherData} />
+        <Sunset weatherData={weatherData && weatherData} />
       </div>
+    </div>
   );
 }
 

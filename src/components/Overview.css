@@ -1,5 +1,5 @@
 .overview{
-    grid-row: 1/span 2;
+    grid-row: 2/ 5;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -7,6 +7,7 @@
     justify-content: flex-start;
     gap: 1rem;
     background-color: var(--color-card-background);
+    grid-column: 1;
 }
 
 .overview__main{
@@ -21,4 +22,11 @@
     width: 100%;
     max-width: 15rem;
     filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.7));
+}
+
+.overview__country{
+    font-weight: 300;
+    font-size: 1rem;
+    display: block;
+    margin-top: -.5rem;
 }

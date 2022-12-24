@@ -6,6 +6,7 @@ export default function Forecast({ forecast }) {
   const [days, setDays] = useState([])
   const [filteredDays, setFilteredDays] = useState()
 
+
   useEffect(() => {
     if (forecast) {
       setDays(forecast.list)
@@ -18,6 +19,7 @@ export default function Forecast({ forecast }) {
     }
   }, [days])
 
+
   return (
     <div className='forecast__container'>
       {filteredDays && filteredDays.map((day, index) => {
@@ -29,6 +31,8 @@ export default function Forecast({ forecast }) {
             icon={day.weather[0].icon}
             temperature={day.main.temp}
             feelsLike={day.main.feels_like}
+            cloudiness={day.clouds.all}
+            wind={day.wind}
           />
         )
       })}

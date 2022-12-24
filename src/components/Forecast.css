@@ -1,5 +1,6 @@
 .forecast__container{
     grid-column: 2 / span 2;
+    grid-row: 2 / 4;
     display: flex;
     justify-content: space-between;
     align-items: center;

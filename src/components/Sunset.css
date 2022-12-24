@@ -2,7 +2,8 @@
     background-color: var(--color-card-background);
     display: flex;
     justify-content: space-around;
-    /* gap: 2rem; */
+    grid-row: 4;
+    grid-column: 3;
 }
 
 .sunset-img,
@@ -15,6 +16,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 3rem;
+    gap: 2rem;
     text-align: center;
 }
