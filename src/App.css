@@ -1,6 +1,6 @@
 .App {
-  height: 100vh;
   width: 100vw;
+  min-height: 100vh;
   background-image: url("./images/day12.jpg");
   background-position: center;
   background-size: cover;
@@ -13,16 +13,18 @@
 .content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 2rem 1fr 1fr 1fr;
+  grid-template-rows: 2rem 1fr auto;
   padding: 5rem;
   padding-top: 3rem;
   margin: 0 auto;
-  height: 90%;
+  height: fit-content;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.1);
   width: 90%;
+  max-width: 100rem;
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: opacity 2s;
 }
 
 .content > div:not(:first-child) {
@@ -35,8 +37,14 @@
 .time{
   margin: 1rem;
   grid-column: 1 / -1;
-  text-align: right;
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
 } 
+
+.hidden{
+  opacity: 0;
+}
 
 @media (max-width:1440px){
   .content{
@@ -45,19 +53,18 @@
   }
 }
 
-@media (max-width:810px){
+@media (max-width:768px){
   .content > div:not(:first-child) {
-    margin: .5rem;
+    margin: .2rem;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
   }
   .content{
-    grid-template-rows: 2rem 1fr 1fr;
+    grid-template-rows: repeat(5, auto);
   }
   .App{
-    padding: 5rem 0;
+    padding: 2rem 0;
   }
-}
-
-@media (max-width:526px){
-
+  .time{
+    margin: .2rem;
+  }
 }

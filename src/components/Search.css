@@ -32,3 +32,11 @@
     top: 5px;
     right: 0;
 }
+
+@media (max-width: 768px) {
+    .search{
+        grid-column: 2;
+        grid-row: 1 / -1;
+        width: 100%;
+    }
+  }

@@ -9,7 +9,7 @@ export default function Wind({ weatherData }) {
       <img alt='wind icon' src={icon} className='wind__logo' />
       <div className='wind__data'>
         <div>Speed: <span className='bold'>{weatherData && weatherData.wind.speed}</span> m/s</div>
-        <div>Degrees: <span className='bold'>{weatherData && weatherData.wind.deg}</span>&#176;</div>
+        <div>Direction: <span className='bold'>{weatherData && weatherData.wind.deg}</span>&#176;</div>
       </div>
     </div>
   )
