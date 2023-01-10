@@ -2,6 +2,7 @@ import React from 'react'
 import './Search.css'
 
 export default function Search({handleSubmitCity, handleInputCity}) {
+
     return (
         <div className='search'>
             <form className='search__form' onSubmit={handleSubmitCity}>

@@ -24,6 +24,7 @@
     background: none;
     border: none;
     height: 1rem;
+    cursor: pointer;
 }
 
 .search__submit-btn img{
